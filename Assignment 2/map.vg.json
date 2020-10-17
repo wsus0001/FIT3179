@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "title": "COVID-19 Active Cases (10 Oct 2020)",
+    "title": "Highest university ranking by country",
     "width": 800,
     "height": 600,
     "projection": {"type": "equirectangular"},
@@ -17,17 +17,17 @@
                 "fields": ["MinimumRank"]
             }
         },
-        {"calculate": "datum", "as": "Rank"}
+        {"calculate": "datum", "as": "rank"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
         "color": {
-            "field": "Active Cases",
+            "field": "rank",
             "type": "quantitative",
-            "scale": {"type": "log"}
+            "scale": {"type": "linear"}
         },
         "tooltip": [
-            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "properties.name", "type": "nominal", "title": "Country"},
             {"field": "Active", "type": "quantitative"}
         ]
     }
