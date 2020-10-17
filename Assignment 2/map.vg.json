@@ -6,18 +6,18 @@
     "projection": {"type": "equirectangular"},
     "data": {
         "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/world.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        "format": {"type": "topojson", "feature": "world"}
     },
     "transform": [
         {
-            "lookup": "properties.NAME",
+            "lookup": "properties.name",
             "from": {
-                "data": {"url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/data/covid_10_10_2020.csv"},
+                "data": {"url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/HighestRank.csv"},
                 "key": "Country",
-                "fields": ["Active"]
+                "fields": ["MinimumRank"]
             }
         },
-        {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+        {"calculate": "datum", "as": "Rank"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
