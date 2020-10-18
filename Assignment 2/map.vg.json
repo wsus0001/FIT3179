@@ -17,7 +17,7 @@
                 "fields": ["MinimumRank"]
             }
         },
-        {"calculate": "datum", "as": "rank"}
+        {"calculate": "datum.MinimumRank + 0.1", "as": "rank"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
@@ -27,7 +27,7 @@
             "scale": {
                 "type": "threshold",
                 "domain": [50, 100, 250],
-                "range": ["#238b45", "#66c2a4", "#b2e2e2", "edf8fb"]
+                "range": ["#238b45", "#66c2a4", "#b2e2e2", "#edf8fb"]
             }
         },
         "tooltip": [
