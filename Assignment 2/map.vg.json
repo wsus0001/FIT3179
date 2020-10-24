@@ -3,14 +3,14 @@
     "title": "Highest university ranking by country",
     "width": 800,
     "height": 600,
-    "projection": {"type": "equirectangular"},
+    "projection": {"type": "equalEarth"},
     "data": {
       "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/world.topojson",
-      "format": {"type": "topojson", "feature": "world"}
+      "format": {"type": "topojson", "feature": "ne_50m_admin_0_sovereignty"}
     },
     "transform": [
       {
-        "lookup": "properties.name",
+        "lookup": "properties.NAME",
         "from": {
           "data": {
             "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/HighestRank.csv"
@@ -33,7 +33,7 @@
         }
       },
       "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "Country"},
+        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
         {"field": "MinimumRank", "type": "quantitative"}
       ]
     }
