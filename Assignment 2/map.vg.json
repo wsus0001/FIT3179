@@ -5,36 +5,62 @@
     "height": 600,
     "projection": {"type": "equalEarth"},
     "data": {
-      "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/world.topojson",
-      "format": {"type": "topojson", "feature": "ne_50m_admin_0_sovereignty"}
+        "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/world.topojson",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_0_sovereignty"}
     },
-    "transform": [
-      {
-        "lookup": "properties.NAME",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/HighestRank.csv"
-          },
-          "key": "Country",
-          "fields": ["MinimumRank"]
+    "params": [{
+        "name": "Continent_selection",
+        "bind": {
+            "input": "select",
+            "options": [
+                null,
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia-Pacific"
+            ],
+            "labels": [
+                "Show All",
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia-Pacific"
+            ],
+            "name": "Continent Selection: "
         }
-      },
-      {"calculate": "datum.MinimumRank? parseFloat(datum.MinimumRank) + 0.1: -1", "as": "rank"}
+    }],
+    "transform": [
+        {
+        "filter": "Continent_selection == null || (Continent_selection == 'Asia-Pacific'? datum.properties.CONTINENT == 'Asia' || datum.properties.CONTINENT == 'Oceania':datum.properties.CONTINENT == Continent_selection)"
+        },
+        {
+            "lookup": "properties.NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/HighestRank.csv"
+                },
+                "key": "Country",
+                "fields": ["MinimumRank"]
+            }
+        },
+        {"calculate": "datum.MinimumRank? parseFloat(datum.MinimumRank) + 0.1: -1", "as": "rank"}
     ],
     "mark": {"type": "geoshape"},
     "encoding": {
-      "color": {
-        "field": "rank",
-        "type": "quantitative",
-        "scale": {
-          "type": "threshold",
-          "domain": [1, 50, 100, 250],
-          "range": ["#dddddd", "#238b45", "#66c2a4", "#b2e2e2", "#edf8fb"]
-        }
-      },
-      "tooltip": [
-        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "MinimumRank", "type": "quantitative"}
-      ]
+        "color": {
+            "field": "rank",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [1, 51, 101, 251],
+                "range": ["#dddddd", "#238b45", "#66c2a4", "#b2e2e2", "#edf8fb"]
+            }
+        },
+        "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "MinimumRank", "type": "quantitative"}
+        ]
     }
-  }
+}
