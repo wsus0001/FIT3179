@@ -1,0 +1,66 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "title": "Number of universities ranked 100 or above by country",
+    "width": 800,
+    "height": 600,
+    "projection": {"type": "equalEarth"},
+    "data": {
+        "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/world.topojson",
+        "format": {"type": "topojson", "feature": "ne_50m_admin_0_sovereignty"}
+    },
+    "params": [{
+        "name": "Continent_selection",
+        "bind": {
+            "input": "select",
+            "options": [
+                null,
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia-Pacific"
+            ],
+            "labels": [
+                "Show All",
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia-Pacific"
+            ],
+            "name": "Continent Selection: "
+        }
+    }],
+    "transform": [
+        {
+        "filter": "Continent_selection == null || (Continent_selection == 'Asia-Pacific'? datum.properties.CONTINENT == 'Asia' || datum.properties.CONTINENT == 'Oceania':datum.properties.CONTINENT == Continent_selection)"
+        },
+        {
+            "lookup": "properties.NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/Above100Count.csv"
+                },
+                "key": "Country",
+                "fields": ["Count"]
+            }
+        },
+        {"calculate": "datum.Count? datum.Count: 0", "as": "count"}
+    ],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [1, 5, 10],
+                "range": ["#dddddd", "#efedf5", "#bcbddc", "#756bb1"]
+            }
+        },
+        "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "count", "type": "quantitative"}
+        ]
+    }
+}

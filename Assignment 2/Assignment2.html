@@ -9,12 +9,41 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+        <h1>2020 QS University World Rankings</h1>
+        <p>The following map shows the highest ranking attained by a university for each country.</p>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+            <div id="vis"></div>
+        </div>
+        <div class="pure-u-1-3">
+            <p>Use the drop-down menu at the bottom of the map to filter by continent. This is useful if you are looking for a university that is close to your home country.</p>
+            <p>Not shown on the map are two city-states which have decent universities:</p>
+            <ul>
+                <li>Singapore, where both Nanyang Technological University (NTU) and the National University of Singapore (NUS) attained <strong style="color: #238b45">rank 11</strong></li>
+                <li>Hong Kong, where the University of Hong Kong (HKU) attained <strong style="color: #238b45">rank 25</strong></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+            <p></p>
+        </div>
+        <div class="pure-u-2-3">
+            <div id="vis2"></div>
+        </div>
+    </div>
 
-<div id="vis"></div>
-
-<script type="text/javascript">
-    var spec = "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/map.vg.json";
-    vegaEmbed('#vis', spec).then(function(result) {}).catch(console.error);
-</script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/map.vg.json";
+        vegaEmbed('#vis', spec).then(function(result) {}).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/map2.vg.json";
+        vegaEmbed('#vis2', spec).then(function(result) {}).catch(console.error);
+    </script>
 </body>
 </html>
