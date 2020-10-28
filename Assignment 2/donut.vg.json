@@ -13,7 +13,7 @@
             {"category": "International student ratio", "value": 5}
         ]
     },
-    "mark": {"type": "arc", "innerRadius": 75},
+    "mark": {"type": "arc", "innerRadius": 150},
     "encoding": {
         "theta": {"field": "value", "type": "quantitative"},
         "color": {
