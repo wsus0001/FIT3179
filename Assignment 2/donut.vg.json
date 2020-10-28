@@ -1,5 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "background": "ivory",
+    "width": 400,
+    "height": 400,
     "data": {
         "values": [
             {"category": "Academic reputation", "value": 40},
