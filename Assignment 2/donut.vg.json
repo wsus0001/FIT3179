@@ -2,12 +2,12 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "data": {
         "values": [
-            {"category": "Academic reputation (40%)", "value": 40},
-            {"category": "Employer reputation (10%)", "value": 10},
-            {"category": "Faculty/student ratio (20%)", "value": 20},
-            {"category": "Citations per faculty (20%)", "value": 20},
-            {"category": "International faculty ratio (5%)", "value": 5},
-            {"category": "International student ratio (5%)", "value": 5}
+            {"category": "Academic reputation", "value": 40},
+            {"category": "Employer reputation", "value": 10},
+            {"category": "Faculty/student ratio", "value": 20},
+            {"category": "Citations per faculty", "value": 20},
+            {"category": "International faculty ratio", "value": 5},
+            {"category": "International student ratio", "value": 5}
         ]
     },
     "mark": {"type": "arc", "innerRadius": 75},
@@ -20,7 +20,12 @@
             "scale": {
                 "range": ["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854","#ffd92f"]
             }
-        }
+        },
+        "tooltip": [{
+          "field": "category", "title": "Category"
+        }, {
+          "field": "value", "title": "Weight (%)"
+        }]
     },
     "view": {"stroke": null}
 }
