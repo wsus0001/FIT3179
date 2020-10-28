@@ -2,8 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "title": "Highest university ranking by country",
     "background": "ivory",
-    "width": "container",
-    "height": "container",
+    "width": 800,
+    "height": 600,
     "projection": {"type": "equalEarth"},
     "data": {
         "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/world.topojson",
