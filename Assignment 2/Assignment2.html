@@ -53,22 +53,23 @@
             <div id="vis"></div>
         </div>
         <div class="pure-u-1-3">
+            <h2>Highest university ranking by country</h2>
             <p>The map on the left shows the highest ranking attained by a university for each country.</p>
-            <p>Use the drop-down menu at the bottom of the map to filter by continent. This is useful if you are looking for a university that is close to your home country.</p>
-            <p>Hover a country on the map to view the highest university ranking in the country. Not shown on the map are two city-states which have decent universities:</p>
+            <p>Not shown on the map are two city-states which have decent universities:</p>
             <ul>
-                <li><strong>Singapore</strong>, where both Nanyang Technological University (NTU) and the National University of Singapore (NUS) attained <strong style="color: #238b45">rank 11</strong></li>
-                <li><strong>Hong Kong</strong>, where the University of Hong Kong (HKU) attained <strong style="color: #238b45">rank 25</strong></li>
+                <li>&#x1f1f8;&#x1f1ec; <strong>Singapore</strong>, where both Nanyang Technological University (NTU) and the National University of Singapore (NUS) attained <strong style="color: #238b45">rank 11</strong></li>
+                <li>&#x1f1ed;&#x1f1f0; <strong>Hong Kong</strong>, where the University of Hong Kong (HKU) attained <strong style="color: #238b45">rank 25</strong></li>
             </ul>
         </div>
     </div>
     <div class="pure-g">
         <div class="pure-u-1-3">
-            <p>This is another map, showing the <em>number of universities</em> ranked 100 or above by country. Use the drop-down menu at the bottom of the map to filter by continent. This is useful if you are looking for a university that is close to your home country.</p>
+            <h2>Number of universities with rank 100 or above</h2>
+            <p>On the right is a map showing the <em>number of universities</em> ranked 100 or above by country.</p>
             <p>Not shown on the map are two city-states which have several universities ranked 100 or above:</p>
             <ul>
-                <li><strong>Singapore</strong>, with 2 universities</li>
-                <li><strong>Hong Kong</strong>, with 5 universities</li>
+                <li>&#x1f1f8;&#x1f1ec; <strong>Singapore</strong>, with 2 universities</li>
+                <li>&#x1f1ed;&#x1f1f0; <strong>Hong Kong</strong>, with 5 universities</li>
             </ul>
         </div>
         <div class="pure-u-2-3">
@@ -84,6 +85,11 @@
             </ol>
         </div>
     </div>
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <p><a href="../index.html">Back to homepage</a></p>
+        </div>
+    </div>
     <!--
         Please add top universities worldwide and by continent here.
     -->
@@ -97,7 +103,7 @@
     </script>
     <script type="text/javascript">
         var spec = "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/donut.vg.json";
-        vegaEmbed('#visDonut', spec, {"actions": true}).then(function(result) {}).catch(console.error);
+        vegaEmbed('#visDonut', spec, {"actions": false}).then(function(result) {}).catch(console.error);
     </script>
 </body>
 </html>
