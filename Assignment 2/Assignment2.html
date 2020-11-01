@@ -77,6 +77,13 @@
         </div>
     </div>
     <div class="pure-g">
+        <div class="pure-u-1-1" style="text-align: center;">
+            <h2>List of the top 30 universities</h2>
+            <p>Below is a list of the top 30 universities, with the overall score shown on the right.</p>
+            <div id="visBar"></div>
+        </div>
+    </div>
+    <div class="pure-g">
         <div class="pure-u-1-1">
             <h2><a name="REF">References</a></h2>
             <ol>
@@ -104,6 +111,10 @@
     <script type="text/javascript">
         var spec = "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/donut.vg.json";
         vegaEmbed('#visDonut', spec, {"actions": false}).then(function(result) {}).catch(console.error);
+    </script>
+    <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/wsus0001/FIT3179/master/Assignment%202/bar.vg.json";
+        vegaEmbed('#visBar', spec, {"actions": false}).then(function(result) {}).catch(console.error);
     </script>
 </body>
 </html>
