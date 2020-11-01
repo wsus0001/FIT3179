@@ -1,8 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "config": {
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
+    },
     "background": "ivory",
     "width": 1000,
-    "title": "",
     "data": {
         "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/2020-QS-World-University-Rankings_small.csv"
     },
