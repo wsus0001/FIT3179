@@ -80,7 +80,7 @@
         {
             "mark": {
                 "type": "text",
-                "x": 30,
+                "x": 50,
                 "color": "#fff",
                 "align": "left",
                 "fontSize": 16,
