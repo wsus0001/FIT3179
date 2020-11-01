@@ -1,0 +1,102 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 1000,
+    "title": "",
+    "data": {
+        "url": "https://raw.githubusercontent.com/wsus0001/FIT3179/master/2020-QS-World-University-Rankings_small.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum['Overall Score'] - 0",
+            "as": "score"
+        },
+        {
+            "calculate": "datum['Institution Name'] + ' / ' + datum['Country']",
+            "as": "nameCountry"
+        }
+    ],
+    "encoding": {
+        "y": {
+            "sort": {
+                "field": "score",
+                "order": "descending"
+            },
+            "field": "Institution Name",
+            "type": "ordinal",
+            "axis": {
+                "grid": false,
+                "labels": false,
+                "title": null,
+                "ticks": false
+            },
+            "scale": {
+                "padding": 40
+            }
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "bar",
+                "height": 30,
+                "cornerRadiusEnd": 5
+            },
+            "encoding": {
+                "x": {
+                    "field": "score",
+                    "type": "quantitative",
+                    "axis": {
+                        "grid": false,
+                        "labels": false,
+                        "title": null,
+                        "ticks": false
+                    }
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.score == 100",
+                        "value": "firebrick"
+                    },
+                    "value": "darkslateblue"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "dx": -30,
+                "color": "#fff",
+                "fontSize": 28
+            },
+            "encoding": {
+                "text": {
+                    "field": "score"
+                },
+                "x": {
+                    "field": "score",
+                    "type": "quantitative",
+                    "axis": {
+                        "grid": false,
+                        "labels": false,
+                        "title": null,
+                        "ticks": false
+                    }
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "x": 10,
+                "color": "#fff",
+                "align": "left",
+                "fontSize": 16
+            },
+            "encoding": {
+                "text": {
+                    "field": "nameCountry"
+                }
+            }
+        }
+    ]
+}
