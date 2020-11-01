@@ -30,12 +30,7 @@
             },
             "field": "Institution Name",
             "type": "ordinal",
-            "axis": {
-                "grid": false,
-                "labels": false,
-                "title": null,
-                "ticks": false
-            },
+            "axis": null,
             "scale": {
                 "padding": 40
             }
@@ -52,12 +47,7 @@
                 "x": {
                     "field": "score",
                     "type": "quantitative",
-                    "axis": {
-                        "grid": false,
-                        "labels": false,
-                        "title": null,
-                        "ticks": false
-                    }
+                    "axis": null
                 },
                 "color": {
                     "condition": {
@@ -82,12 +72,7 @@
                 "x": {
                     "field": "score",
                     "type": "quantitative",
-                    "axis": {
-                        "grid": false,
-                        "labels": false,
-                        "title": null,
-                        "ticks": false
-                    }
+                    "axis": null
                 }
             }
         },
