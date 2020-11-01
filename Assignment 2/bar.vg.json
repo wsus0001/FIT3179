@@ -63,6 +63,7 @@
                 "type": "text",
                 "dx": -30,
                 "color": "#fff",
+                "align": "right",
                 "fontSize": 28,
                 "font": "Segoe UI"
             },
