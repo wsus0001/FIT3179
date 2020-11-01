@@ -63,7 +63,8 @@
                 "type": "text",
                 "dx": -30,
                 "color": "#fff",
-                "fontSize": 28
+                "fontSize": 28,
+                "font": "Segoe UI"
             },
             "encoding": {
                 "text": {
@@ -82,11 +83,27 @@
                 "x": 10,
                 "color": "#fff",
                 "align": "left",
-                "fontSize": 16
+                "fontSize": 16,
+                "font": "Segoe UI"
             },
             "encoding": {
                 "text": {
                     "field": "nameCountry"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "x": 10,
+                "color": "#fff",
+                "align": "left",
+                "fontSize": 20,
+                "font": "Segoe UI"
+            },
+            "encoding": {
+                "text": {
+                    "field": "Rank in 2020"
                 }
             }
         }
